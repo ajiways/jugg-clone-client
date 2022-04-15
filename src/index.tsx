@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
 
 const store = setupStore();
 
-export const socket = io("http://192.168.31.5:4000", {
+export const socket = io("jugg-alpha-backend.herokuapp.com/", {
    transports: ["websocket"],
 });
 
