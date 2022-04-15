@@ -17,6 +17,8 @@ import {
    reduceFatigue,
    setFatigue,
    setLocation,
+   setMessage,
+   setMessages,
    setRatingList,
    setResource,
    setUser,
@@ -24,6 +26,7 @@ import {
 } from "./userSlice";
 import { initRestore } from "../../gameLogic/fatigue.mechanic";
 import { RatingItem } from "../../components/interfaces/rating.item.interface";
+import { Message } from "../../components/interfaces/message.interface";
 
 export const initSocket = () => {
    return (dispatch: AppDispatch) => {
@@ -78,6 +81,14 @@ export const initSocket = () => {
       socket.on("rating:get:list:response", (data: RatingItem[]) => {
          dispatch(setRatingList(data));
       });
+
+      socket.on("messages:get:list", (data: Message[]) => {
+         dispatch(setMessages(data));
+      });
+
+      socket.on("messages:new:get", (data: Message) => {
+         dispatch(setMessage(data));
+      });
    };
 };
 
@@ -130,4 +141,8 @@ export const setUserFromLocalStorage = (user: UserModel) => {
 
 export const emitGetRatingList = () => {
    socket.emit("rating:get:list");
+};
+
+export const emitNewMessage = (message: Message) => {
+   socket.emit("chat:message:send", message);
 };

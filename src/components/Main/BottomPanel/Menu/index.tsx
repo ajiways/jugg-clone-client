@@ -1,4 +1,5 @@
 import { emitGetRatingList } from "../../../../store/reducers/ActionCreators";
+import Chat from "./Chat";
 import styles from "./menu.module.css";
 import MenuItem from "./MenuItem";
 import Rating from "./Rating";
@@ -14,7 +15,9 @@ const Menu = () => {
          >
             <Rating />
          </MenuItem>
-         <MenuItem disabled title="В разработке" />
+         <MenuItem title="Чат">
+            <Chat />
+         </MenuItem>
          <MenuItem disabled title="В разработке" />
          <MenuItem disabled title="В разработке" />
          <MenuItem disabled title="В разработке" />

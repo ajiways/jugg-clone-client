@@ -1,0 +1,27 @@
+.chat {
+   height: 800px;
+   width: 500px;
+}
+
+.messagesBox {
+   overflow-y: scroll;
+   max-height: 90%;
+   margin-bottom: 10px;
+   border: 1px solid black;
+   padding: 10px;
+}
+
+.chatInputBox {
+   height: 6%;
+   width: 100%;
+   background-color: gray;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.input {
+   width: 490px;
+   font-size: 22px;
+   height: 40px;
+}

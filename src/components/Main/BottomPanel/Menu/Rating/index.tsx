@@ -5,8 +5,6 @@ import RatingItem from "./RatingItem";
 const Rating = () => {
    const { ratingList } = useAppSelector((state) => state.userReducer);
 
-   console.log(ratingList);
-
    return (
       <div className={styles.rating}>
          {ratingList.length ? (

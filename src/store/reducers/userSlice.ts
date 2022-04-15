@@ -4,6 +4,7 @@ import { Resource } from "../../components/interfaces/resource.interface";
 import { Location } from "../../components/interfaces/location.interface";
 import { AuthResponse } from "../../components/interfaces/authResponse.interface";
 import { RatingItem } from "../../components/interfaces/rating.item.interface";
+import { Message } from "../../components/interfaces/message.interface";
 
 interface UserState {
    user: UserModel | null;
@@ -12,6 +13,7 @@ interface UserState {
    selectedResource: Resource | null;
    currentLocation: Location | null;
    ratingList: RatingItem[];
+   messages: Message[];
 }
 
 const initialState: UserState = {
@@ -21,6 +23,7 @@ const initialState: UserState = {
    selectedResource: null,
    currentLocation: null,
    ratingList: [],
+   messages: [],
 };
 
 export const userSlice = createSlice({
@@ -74,6 +77,12 @@ export const userSlice = createSlice({
       setRatingList(state, action: PayloadAction<RatingItem[]>) {
          state.ratingList = action.payload;
       },
+      setMessage(state, action: PayloadAction<Message>) {
+         state.messages = [...state.messages, action.payload];
+      },
+      setMessages(state, action: PayloadAction<Message[]>) {
+         state.messages = action.payload;
+      },
    },
    extraReducers: {},
 });
@@ -90,4 +99,6 @@ export const {
    masteryUp,
    setFatigue,
    setRatingList,
+   setMessage,
+   setMessages,
 } = userSlice.actions;
