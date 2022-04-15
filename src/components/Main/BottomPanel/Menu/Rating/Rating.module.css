@@ -1,3 +1,8 @@
 .rating {
-   
+   width: 500px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   overflow-y: scroll;
+   max-height: 900px;
 }

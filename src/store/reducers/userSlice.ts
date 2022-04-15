@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Resource } from "../../components/interfaces/resource.interface";
 import { Location } from "../../components/interfaces/location.interface";
 import { AuthResponse } from "../../components/interfaces/authResponse.interface";
+import { RatingItem } from "../../components/interfaces/rating.item.interface";
 
 interface UserState {
    user: UserModel | null;
@@ -10,6 +11,7 @@ interface UserState {
    currentStrategy: number | null;
    selectedResource: Resource | null;
    currentLocation: Location | null;
+   ratingList: RatingItem[];
 }
 
 const initialState: UserState = {
@@ -18,6 +20,7 @@ const initialState: UserState = {
    currentStrategy: null,
    selectedResource: null,
    currentLocation: null,
+   ratingList: [],
 };
 
 export const userSlice = createSlice({
@@ -68,6 +71,9 @@ export const userSlice = createSlice({
 
          state.user.fatigue = action.payload;
       },
+      setRatingList(state, action: PayloadAction<RatingItem[]>) {
+         state.ratingList = action.payload;
+      },
    },
    extraReducers: {},
 });
@@ -83,4 +89,5 @@ export const {
    setUserToLoad,
    masteryUp,
    setFatigue,
+   setRatingList,
 } = userSlice.actions;

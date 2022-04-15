@@ -17,11 +17,13 @@ import {
    reduceFatigue,
    setFatigue,
    setLocation,
+   setRatingList,
    setResource,
    setUser,
    setUserToLoad,
 } from "./userSlice";
 import { initRestore } from "../../gameLogic/fatigue.mechanic";
+import { RatingItem } from "../../components/interfaces/rating.item.interface";
 
 export const initSocket = () => {
    return (dispatch: AppDispatch) => {
@@ -72,6 +74,10 @@ export const initSocket = () => {
       socket.on("fatigue:update", (newValue: number) => {
          dispatch(setFatigue(newValue));
       });
+
+      socket.on("rating:get:list:response", (data: RatingItem[]) => {
+         dispatch(setRatingList(data));
+      });
    };
 };
 
@@ -120,4 +126,8 @@ export const setUserFromLocalStorage = (user: UserModel) => {
    return (dispath: AppDispatch) => {
       dispath(setUserToLoad(user));
    };
+};
+
+export const emitGetRatingList = () => {
+   socket.emit("rating:get:list");
 };

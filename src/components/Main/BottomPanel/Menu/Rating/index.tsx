@@ -1,16 +1,23 @@
-import { FC } from "react"
-import styles from "./Rating.module.css"
+import { useAppSelector } from "../../../../../hooks/redux";
+import styles from "./Rating.module.css";
+import RatingItem from "./RatingItem";
 
-export interface RatingProps {
+const Rating = () => {
+   const { ratingList } = useAppSelector((state) => state.userReducer);
 
-}
+   console.log(ratingList);
 
-const Rating: FC<RatingProps> = ({}: RatingProps) => {
-    return (
-        <div className={styles.rating}>
-     
-        </div>
-    );
+   return (
+      <div className={styles.rating}>
+         {ratingList.length ? (
+            ratingList.map(({ login, currentMastery }) => {
+               return <RatingItem login={login} mastery={currentMastery} />;
+            })
+         ) : (
+            <div>В рейтинге никого нет</div>
+         )}
+      </div>
+   );
 };
-   
+
 export default Rating;
