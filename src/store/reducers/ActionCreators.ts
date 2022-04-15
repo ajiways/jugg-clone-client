@@ -53,9 +53,9 @@ export const initSocket = () => {
          dispatch(addLocations(data));
       });
 
-      socket.on("auth:register:response", (data: AuthResponse) => {
-         dispatch(setUser(data));
-      });
+      // socket.on("auth:register:response", (data: AuthResponse) => {
+      //    dispatch(setUser(data));
+      // });
 
       socket.on("auth:login:response", (data: AuthResponse) => {
          dispatch(setUser(data));

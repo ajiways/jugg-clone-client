@@ -6,8 +6,6 @@ import Rating from "./Rating";
 const Menu = () => {
    return (
       <div className={styles.menu}>
-         <MenuItem title="Рюкзак" />
-         <MenuItem title="Магазин" />
          <MenuItem
             OnClick={() => {
                emitGetRatingList();
@@ -16,6 +14,8 @@ const Menu = () => {
          >
             <Rating />
          </MenuItem>
+         <MenuItem disabled title="В разработке" />
+         <MenuItem disabled title="В разработке" />
          <MenuItem disabled title="В разработке" />
          <MenuItem disabled title="В разработке" />
          <MenuItem disabled title="В разработке" />

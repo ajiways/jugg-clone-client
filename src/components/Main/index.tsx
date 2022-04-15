@@ -73,6 +73,7 @@ const Main = () => {
                onClick={() => {
                   emitLogin(inputs);
                   setInputs({ login: "", password: "" });
+                  setLoginModal(false);
                }}
             >
                Войти
@@ -104,6 +105,7 @@ const Main = () => {
                onClick={() => {
                   emitRegister(inputs);
                   setInputs({ login: "", password: "" });
+                  setRegisterModal(false);
                }}
             >
                Зарегаться
