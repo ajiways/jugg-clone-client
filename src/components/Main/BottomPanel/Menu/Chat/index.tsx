@@ -39,7 +39,7 @@ const Chat = () => {
                   return <MessageItem key={msg.id} message={msg} />;
                })
             ) : (
-               <div> Сообщений нет </div>
+               <div style={{ textAlign: "center" }}> Сообщений нет </div>
             )}
          </div>
          <div className={styles.chatInputBox}>
@@ -53,7 +53,7 @@ const Chat = () => {
                <input
                   value={message}
                   onChange={(e) => {
-                     e.target.value && setMessage(e.target.value);
+                     setMessage(e.target.value);
                   }}
                   type="text"
                   className={styles.input}

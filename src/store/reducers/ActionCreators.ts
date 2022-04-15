@@ -126,6 +126,7 @@ export const changeResource = (resource: Resource) => {
 };
 
 export const emitRegister = (userData: UserCredentials) => {
+   userData.login.trim();
    socket.emit("auth:register", userData);
 };
 
@@ -144,5 +145,6 @@ export const emitGetRatingList = () => {
 };
 
 export const emitNewMessage = (message: Message) => {
+   if (!message.content.trim()) return;
    socket.emit("chat:message:send", message);
 };
