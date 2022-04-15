@@ -8,8 +8,10 @@ const Rating = () => {
    return (
       <div className={styles.rating}>
          {ratingList.length ? (
-            ratingList.map(({ login, currentMastery }) => {
-               return <RatingItem login={login} mastery={currentMastery} />;
+            ratingList.map(({ login, currentMastery, id }) => {
+               return (
+                  <RatingItem key={id} login={login} mastery={currentMastery} />
+               );
             })
          ) : (
             <div>В рейтинге никого нет</div>
