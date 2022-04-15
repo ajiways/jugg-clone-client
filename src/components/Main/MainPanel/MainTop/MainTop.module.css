@@ -1,0 +1,62 @@
+.top {
+   border: 1px solid black;
+   padding: 5px;
+   margin-bottom: 15px;
+   height: 200px;
+   display: flex;
+}
+
+.top_right {
+   border: 1px solid black;
+   width: 150px;
+   margin-right: 5px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.top_left {
+   border: 1px solid black;
+   width: 324px;
+   padding: 5px;
+}
+
+.top_progress_bar {
+   border: 1px solid black;
+   height: 25px;
+   margin-bottom: 5px;
+}
+
+.top_location_preview {
+   height: 66%;
+}
+
+.top_location_info {
+   display: flex;
+}
+
+.progress_bar_bar {
+   height: 100%;
+   background-color: green;
+}
+
+.fatigue_progress_bar {
+   height: 100%;
+   background-color: orange;
+}
+
+.success {
+   font-size: 30px;
+   color: green;
+   text-align: center;
+}
+
+.failure {
+   text-align: center;
+   font-size: 30px;
+   color: red;
+}
+
+.player_stats {
+   margin-top: 10px;
+}

@@ -1,0 +1,11 @@
+.menuItem {
+   border: 1px solid black;
+   padding: 5px;
+   width: 130px;
+   cursor: pointer;
+   margin-left: 5px;
+}
+
+.menuItem:last-child {
+   margin-right: 5px;
+}

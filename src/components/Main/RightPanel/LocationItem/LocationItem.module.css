@@ -1,0 +1,17 @@
+.locationitem {
+   border: 1px solid black;
+   padding: 2px;
+   cursor: pointer;
+   margin-bottom: 5px;
+}
+
+.active {
+   border: 2px solid rgb(255, 0, 0);
+   background-color: rgb(231, 231, 231);
+}
+
+.disabled {
+   border: 2px solid orange;
+   cursor: not-allowed;
+   background-color: rgb(165, 165, 165);
+}
