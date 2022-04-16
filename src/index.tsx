@@ -6,7 +6,14 @@ import { io } from "socket.io-client";
 
 const store = setupStore();
 
-export const socket = io("jugg-alpha-backend.herokuapp.com/", {
+let host = "jugg-alpha-backend.herokuapp.com/";
+
+if (process.env.NODE_ENV === "development") {
+   console.log(process.env);
+   host = process.env.REACT_APP_SERVER_URL!;
+}
+
+export const socket = io(host, {
    transports: ["websocket"],
 });
 
